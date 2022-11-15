@@ -39,7 +39,7 @@ public class ManyController {
 		return studRep.findAll();
 	}
 	
-	@GetMapping("coursemat/{id}")
+	@GetMapping("student/{id}")
 	public Student getStudent(@PathVariable long id) {
 		Student student = studRep.findById(id).get();
 		return student;

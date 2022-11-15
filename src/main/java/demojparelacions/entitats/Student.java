@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,8 +30,8 @@ public class Student {
 	boolean wantsNewletter;
 
 	@JoinTable(name = "course_student")
-	
 	@ManyToMany
+	@JsonIgnoreProperties("student")
     private List<Course> course;
 	
 }
